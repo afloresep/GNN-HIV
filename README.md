@@ -36,4 +36,3 @@ We have 5 nodes and we aggregate information of these node embeddings and then a
 - Generating Molecules with Generative GNN Models
 
 - Deployment and UI with Streamlit 
-ç
