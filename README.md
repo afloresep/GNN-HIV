@@ -8,6 +8,7 @@ This datset contains about 40,000 molecules in SMILES format Binary lavel if a s
 We create our own dataset. We inherate from Dataset class from torch_geometric. 
 `dataset.py`
 
+
 - Building a Graph Neural Network
 Input: Molecule with nodes, edges features... from dataset.py
 GNN: apply
