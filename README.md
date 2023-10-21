@@ -7,12 +7,18 @@ This datset contains about 40,000 molecules in SMILES format Binary lavel if a s
 - Building a Custom Dataset in Pytorch Geometric. 
 We create our own dataset. We inherate from Dataset class from torch_geometric. 
 `dataset.py`
+`dataset_featurizer.py`- This includes some changes. 
+    - DeepChem Featurizer. This library uses RDKit in the background to calculate features for each sample/node.  This simplifies the code by reducing the lines of code. 
+    - Cached Dataset for reload. Now the dataset is cached and reloaded everytime the Dataset class is instantiated. In the code this is done with the `processed_file_name` method. Basically, if the processed file is found in the processed folder is returned and if not founded, the whole dataset is recreated. 
+    - Oversampling and Data Split. The data was highly inbalanced (few molecules were classified as active) so Oversampling was done to even the classes in the dataset. Split was also done. 
 
 
 - Building a Graph Neural Network
 Input: Molecule with nodes, edges features... from dataset.py
 GNN: apply
 Output: Update node embeddings with information about neighborhood and about the whole class. In our case are classification specific. Yes or No predictions. 
+
+Note: Edge_attr are not included because as today PyTorch geometric does not support it. 
 
 ## Embedding. Why and How. 
 #### Why embedding? 
